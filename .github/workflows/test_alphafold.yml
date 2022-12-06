@@ -1,9 +1,8 @@
 name: test_gget_alphafold
 on:
-  push:
-    # Runs every Monday
-    schedule:
-      - cron: "0 16 * * 1"
+  # Runs every Monday at 4 pm UTC
+  schedule:
+    - cron: "0 16 * * 1"
 
 jobs:
   build:
