@@ -3,6 +3,9 @@ on:
   schedule: 
     # Runs every Monday
     - cron: "0 16 * * 1"
+  push:
+    branches:
+    - test_gget_alphafold
 
 jobs:
   build:
