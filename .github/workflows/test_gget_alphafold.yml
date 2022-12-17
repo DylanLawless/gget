@@ -1,7 +1,7 @@
 name: test_gget_alphafold
 on:
-  # Runs every Monday at 4 pm UTC
-  schedule:
+  schedule: 
+    # Runs every Monday
     - cron: "0 16 * * 1"
 
 jobs:
