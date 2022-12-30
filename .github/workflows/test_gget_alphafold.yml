@@ -1,8 +1,7 @@
 name: test_gget_alphafold
 on:
   schedule: 
-    # Runs every Monday
-    - cron: "0 16 * * 1"
+    - cron: "0 16 * * 1,4"
   push:
     branches:
     - test_gget_alphafold
