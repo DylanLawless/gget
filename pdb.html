@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>gget pdb - gget</title>
+        <!-- Custom HTML head -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4N3XBEW7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4N3XBEW7');
+</script>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="updates.html">What's New?</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="modules.html"><strong aria-hidden="true">2.</strong> Modules</a></li><li class="chapter-item expanded "><a href="quick_start_guide.html"><strong aria-hidden="true">3.</strong> Quick Start Guide</a></li><li class="chapter-item expanded affix "><li class="part-title">Manual</li><li class="chapter-item expanded "><a href="ref.html"><strong aria-hidden="true">4.</strong> gget ref</a></li><li class="chapter-item expanded "><a href="search.html"><strong aria-hidden="true">5.</strong> gget search</a></li><li class="chapter-item expanded "><a href="info.html"><strong aria-hidden="true">6.</strong> gget info</a></li><li class="chapter-item expanded "><a href="seq.html"><strong aria-hidden="true">7.</strong> gget seq</a></li><li class="chapter-item expanded "><a href="blast.html"><strong aria-hidden="true">8.</strong> gget blast</a></li><li class="chapter-item expanded "><a href="blat.html"><strong aria-hidden="true">9.</strong> gget blat</a></li><li class="chapter-item expanded "><a href="muscle.html"><strong aria-hidden="true">10.</strong> gget muscle</a></li><li class="chapter-item expanded "><a href="enrichr.html"><strong aria-hidden="true">11.</strong> gget enrichr</a></li><li class="chapter-item expanded "><a href="archs4.html"><strong aria-hidden="true">12.</strong> gget archs4</a></li><li class="chapter-item expanded "><a href="pdb.html" class="active"><strong aria-hidden="true">13.</strong> gget pdb</a></li><li class="chapter-item expanded "><a href="alphafold.html"><strong aria-hidden="true">14.</strong> gget alphafold</a></li><li class="chapter-item expanded "><a href="setup.html"><strong aria-hidden="true">15.</strong> gget setup</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="cite.html">Terms of Use</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">gget</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <blockquote>
+<p>Python arguments are equivalent to long-option arguments (<code>--arg</code>), unless otherwise specified. Flags are True/False arguments in Python. The manual for any gget tool can be called from the command-line using the <code>-h</code> <code>--help</code> flag.</p>
+</blockquote>
+<h2 id="gget-pdb-"><a class="header" href="#gget-pdb-">gget pdb 🔮</a></h2>
+<p>Query <a href="https://www.rcsb.org/">RCSB Protein Data Bank (PDB)</a> for the protein structure/metadata of a given PDB ID.<br />
+Return format: Resource 'pdb' is returned in PDB format. All other resources are returned in JSON format.</p>
+<p><strong>Positional argument</strong><br />
+<code>pdb_id</code><br />
+PDB ID to be queried, e.g. '7S7U'.</p>
+<p><strong>Optional arguments</strong><br />
+<code>-r</code> <code>--resource</code><br />
+Defines type of information to be returned. One of the following:<br />
+'pdb': Returns the protein structure in PDB format (default).<br />
+'entry': Information about PDB structures at the top level of PDB structure hierarchical data organization.<br />
+'pubmed': Get PubMed annotations (data integrated from PubMed) for a given entry's primary citation.<br />
+'assembly': Information about PDB structures at the quaternary structure level.<br />
+'branched_entity': Get branched entity description (define entity ID as 'identifier').<br />
+'nonpolymer_entity': Get non-polymer entity data (define entity ID as 'identifier').<br />
+'polymer_entity': Get polymer entity data (define entity ID as 'identifier').<br />
+'uniprot': Get UniProt annotations for a given macromolecular entity (define entity ID as 'identifier').<br />
+'branched_entity_instance': Get branched entity instance description (define chain ID as 'identifier').<br />
+'polymer_entity_instance': Get polymer entity instance (a.k.a chain) data (define chain ID as 'identifier').<br />
+'nonpolymer_entity_instance': Get non-polymer entity instance description (define chain ID as 'identifier').</p>
+<p><code>-i</code> <code>--identifier</code><br />
+Can be used to define assembly, entity or chain ID (default: None). Assembly/entity IDs are numbers (e.g. 1), and chain IDs are letters (e.g. 'A').</p>
+<p><code>-o</code> <code>--out</code><br />
+Path to the file the results will be saved in, e.g. path/to/directory/7S7U.pdb or path/to/directory/7S7U_entry.json. Default: Standard out.<br />
+Python: <code>save=True</code> will save the output in the current working directory.</p>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<pre><code class="language-bash">gget pdb 7S7U -o 7S7U.pdb
+</code></pre>
+<pre><code class="language-python"># Python
+gget.pdb(&quot;7S7U&quot;, save=True)
+</code></pre>
+<p>→ Saves the structure of 7S7U in PDB format as '7S7U.pdb' in the current working directory.</p>
+<p><strong>Find PDB crystal structures for a comparative analysis of protein structure:</strong></p>
+<pre><code class="language-bash"># Find PDB IDs associated with an Ensembl ID 
+gget info ENSG00000130234
+
+# Alternatively: Since many entries in the PDB do not have linked Ensembl IDs, 
+# you will likely find more PDB entries by BLASTing the sequence agains the PDB.
+
+# Get the amino acid sequence of a transcript from an Ensembl ID
+gget seq --translate ENSG00000130234 -o gget_seq_results.fa
+
+# BLAST an amino acid sequence to find similar structures in the PDB
+gget blast --database pdbaa gget_seq_results.fa
+
+# Get PDB files from the PDB IDs returned by gget blast for comparative analysis
+gget pdb 7DQA -o 7DQA.pdb
+gget pdb 7CT5 -o 7CT5.pdb
+</code></pre>
+<pre><code class="language-python"># Find PDB IDs associated with an Ensembl ID 
+gget.info(&quot;ENSG00000130234&quot;)
+
+# Alternatively: Since many entries in the PDB do not have linked Ensembl IDs, 
+# you will likely find more PDB entries by BLASTing the sequence agains the PDB.
+
+# Get the amino acid sequence of a transcript from an Ensembl ID
+gget.seq(&quot;ENSG00000130234&quot;, translate=True, save=True)
+
+# BLAST an amino acid sequence to find similar structures in the PDB
+gget.blast(&quot;gget_seq_results.fa&quot;, database=&quot;pdbaa&quot;)
+
+# Get PDB files from the PDB IDs returned by gget blast for comparative analysis
+gget.pdb(&quot;7DQA&quot;, save=True)
+gget.pdb(&quot;7CT5&quot;, save=True)
+</code></pre>
+<p>→ The use case above exemplifies how to find PDB files for comparative analysis of protein structure starting with Ensembl IDs or amino acid sequences. The fetched PDB files can also be compared to predicted structures generated by <a href="alpahfold.html"><code>gget alphafold</code></a>. PDB files can be viewed interactively in 3D <a href="https://rcsb.org/3d-view">online</a>, or using programs like <a href="https://pymol.org/">PyMOL</a> or <a href="https://www.blender.org/">Blender</a>. To compare two PDB files, you can use <a href="https://rcsb.org/alignment">this website</a>.</p>
+<h4 id="more-examples"><a class="header" href="#more-examples"><a href="https://github.com/pachterlab/gget_examples">More examples</a></a></h4>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="archs4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="alphafold.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="archs4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="alphafold.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
